@@ -9,7 +9,7 @@ def eating_cookies(n, cache=[]):
   if n in cache:
     return cache[n]
   elif n == 0:
-    return 1
+    return 1 
   elif n < 0:
     return 0
   else:
