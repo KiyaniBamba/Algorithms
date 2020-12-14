@@ -3,7 +3,22 @@
 import argparse
 
 def find_max_profit(prices):
-  pass
+  # create variable for max profit
+  max_profit = prices[1] - prices[0]
+
+  #  create a variable for the min price
+  min_price = prices[0]
+
+  #  for loop which loops in the range of 1 and the lenght of array/prices
+  for i in range(1, len(prices)):
+    # if max profit < current price - min_price
+    if max_profit < prices[i] - min_price:
+      # change the var max profit to current price - min price
+      max_profit = prices[i] - min_price
+    if min_price > prices[i]:
+      min_price = prices[i]
+      
+  return max_profit
 
 
 if __name__ == '__main__':

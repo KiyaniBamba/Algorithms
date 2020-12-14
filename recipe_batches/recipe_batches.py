@@ -3,7 +3,17 @@
 import math
 
 def recipe_batches(recipe, ingredients):
-  pass 
+  how_many_times = []
+  if len(recipe) > len(ingredients):
+    return 0
+  
+  for key in recipe:
+    if key not in ingredients:
+      return 0
+      
+  for key in recipe:
+    how_many_times.append(ingredients[key] // recipe[key])
+  return min(how_many_times)
 
 
 if __name__ == '__main__':
